@@ -3,25 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Web</title>
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+                    /* Estilos CSS opcionales para personalizar el diseño  */
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 0;
+            }
+            /* Estilos específicos para los encabezados */
+            h1, h2{
+                margin: 0;
+                padding: 0;
+                font-family: Arial, sans-serif;
+                font-weight: bold;
+            }
+            /* Estilos para la sección de inicio */
+            #inicio {
+                padding: 50px;
+                background-color: #ffbbecdf;
+            }
+            #inicio img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            }
+            /* Estilos para la sección de habilidades */
+            #habilidades {
+                padding: 50px;
+                background-color: #fff;
+            }
+            /* Estilos para la lista de habilidades */
+            #habilidades ul{
+                list-style-type: none;
+            }
+            /* Estilos para la sección de proyectos */
+            #proyectos {
+                padding: 50px;
+                background-color: #ffbbecdf;
+            }
+            /* Estilos específicos para la lista de proyectos */
+            #proyectos li {
+                list-style-type: none;
+            }
+            /* Estilos para la sección de experiencia */
+            #experiencia {
+                padding: 50px;
+            }
+            /* Estilos específicos para la sección de contacto */
+            #contacto {
+                padding: 50px;
+                background-color: #ffbbecdf;
+            }
+            /* Estilos específicos para la lista de contactos */
+            #contacto ul {
+                list-style-type: none;
+            }
+            /* Estilos generales para los párrafos y listas */
+            p, ul, li{
+                font-family: Arial, sans-serif;
+                font-size: 16px;
+                color: #333;
+            }
+            /* header {
+                background-color: #007bff;
+                color: #fff;
+                padding: 1rem;
+                text-align: center;
+            }
+
+            main {
+                padding: 2rem;
+            } */
+
+            p {
+                font-size: 1.2rem;
+            }
+
+            /* Estilos específicos para las secciones */
+            section {
+                margin-bottom: 2rem;
+            }
+            /* Estilos para el pie de página */
+            footer {
+                background-color: #007bff;
+                color: #fff;
+                text-align: center;
+                padding: 1rem;
+            }
+            
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Bienvenido a Mi Página Web</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Acerca de</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
-    </nav>
-    <main>
-        <h2>Contenido Principal</h2>
-        <p>¡Hola! Esta es una página web de ejemplo.</p>
-    </main>
-    <footer>
-        <p>Derechos de autor © 2023. Todos los derechos reservados.</p>
-    </footer>
+    <!-- Sección de inicio -->
+    <section id="inicio">
+        <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Mi logo o imagen de cabecera">
+        <h1>Nombre Completo</h1>
+        <p>Breve descripción sobre ti y tus intereses profesionales.Soy [Tu nombre completo], un apasionado [tu profesión o área de especialización]. Mi objetivo es [tu objetivo profesional o metas]. A lo largo de mi carrera, he trabajado en proyectos que involucran [habilidades relevantes o tecnologías]. Estoy constantemente aprendiendo y mejorando mis habilidades para [lo que esperas lograr o contribuir en tu carrera].</p>
+    </section>
+        <!-- Sección de habilidades -->
+        <section id="habilidades">
+            <h2>Habilidades</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Otras habilidades relevantes</li>
+            </ul>
+        </section>
+        <!-- Sección de proyectos -->
+        <section id="proyectos">
+            <h2>Proyectos</h2>
+            <li>Nombre del proyecto 1</li>
+            <li>Nombre del proyecto 2</li>
+            <li>Nombre del proyecto 3</li>
+        </section>
+        <!-- Sección de experiencia -->
+        <section id="experiencia">
+            <h2>Experiencia</h2>
+            <p>En esta sección, puedes resumir tu experiencia laboral, proyectos anteriores y logros profesionales.</p>
+        </section>
+        <!-- Sección de contacto -->
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Puedes contactarme a través de los siguientes</p>
+            <ul>
+                <li>Email: tu@gmail.com</li>
+                <li>Teléfono: +52135573937</li>
+                <li>Redes sociales: enlace a tus perfiles en redes sociales</li>
+            </ul>
+        </section>
 </body>
 </html>
+
