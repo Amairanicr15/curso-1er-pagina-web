@@ -202,3 +202,6 @@ Ambas son herramientas muy útiles en el desarrollo , especialmente para la crea
 
 FLEXBOX
 Consiste en el ordenamiento de elementos hijos en un solo eje, por defecto horizontalmente. El elemento padre. ocontenedor deberá contener la propiedad display con el valor flex. A partir de aqui, ya puedes ordenar los hijos según sea necesario.
+
+
+MODELO DE CAJA 
