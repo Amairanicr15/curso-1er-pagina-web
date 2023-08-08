@@ -57,9 +57,9 @@ El anidamiento de elementos HTML consiste en envolver varias etiquetas en otras 
 
 Interpreta a cada elemento HTML como una caja onde puedes guardar diferentes elementos u otras cajas. Estas cajas tendrán diferentes tamaños y estarán colocadas junto a otras. 
 
-Aquellas etiquetas que envuelven a otras se las denomina "padres". Es decir, <section> es padre del <h1>, <p>, <ul>, y a suvez <ul> es padre de 3 etiquetas <li>.
+/* Aquellas etiquetas que envuelven a otras se las denomina "padres". Es decir, <section> es padre del h1, p, ul, y a su vez ul es padre de 3 etiquetas li. */
 
-Las etiquetas que son el contenido de otras, se las denomina "hijos". Es decir, las etiquetas <h1>, <p>, <ul> son hijos de <section>, y a su vez las etiquetas <li> son hijos de <ul>.
+Las etiquetas que son el contenido de otras, se las denomina "hijos". Es decir, las etiquetas h1, p, ul son hijos de section, y a su vez las etiquetas li son hijos de ul.
 
 La estructura básica de un documento HTML está configurado por las siguientes etiquetas principales:
 * Etiqueta Doctype - La etiqueta <!DOCTYPE html> especifica que el archivo se maneje con la versión 5 de HTML. 
@@ -127,4 +127,78 @@ Las medidas iniciales para establecer tamaños de elementos o de tipografia:
 - px: establece una longitud de pixelex
 - ‰: establece un porcentaje con respecto a una medida base
 
+TIPOS DE SELECTORES Y COMBINADORES
+El selector define el elemento o conjunto de elementos HTML a los cuales se añadiran estilos. Existen nombres de colores propios de CSS que puedes expllorar.
+Un selector básico es la mínima exxpresión CSS para colocar estilos. 
+selector {
+    /* Estilos */
+}
+- de tipo: div {...} - Selecciona todos los elementos que coincidan con el nombre de la etiqueta HTML
+- de clase: .elemento{...} - Selecciona todos los elementos que coincidan con las eituqyetas HTML que contengan el atributo class
+- de id: #id-del-elemento - Selecciona el único elemento que coincida con la etiqueta HTML que contenga el atributo id. Solo puede existir un valor id para todo el documento.
+- de atributo: a[href="..."]{...} - Selecciona los elementos que coincidan con la etiqueta HTML que contenga el atributo y valor especificado
+- universal: *{...} - Selecciona todos los elementos del coumento mediante un asterisco *.
 
+Selectores combinadores 
+* Descendientes - div p Selecciona todos los elementos del selector de la derecha que son hijos del selector de la izquierda, independientemente de la profundidad. Estos selectores están separados por un espacio. 
+* Hijo directo - div > p Selecciona todos los elementos del selector de la derecha que son hijos directos del selector de la izquierda. Estos selectores están separados por >.
+* Elemento adyacente - div + p Selecciona todos los elementos del selector de la derecha que están adyacente al selector de la izquierda. Estos selectores están separados por +.
+* General de Hermanos - div ~ p Selecciona todos los elementos del selector de la derecha que son hermanos del selector de la izquierda. Estos selectores están separados por ~.
+
+
+SELECTORES PSEUDOCLASES Y PSEUDOELEMENTOS 
+Existen otros tipso de selectores, además de los selectores básicos y combinadores, capaces de cambiar un estado o añadir algo más al elemento. Estos son denominados pseudoclases o pseudoelementos. 
+
+Los pseudoclases define el estilo de un estado especial de un elemento.
+Sintaxis 
+          selector : pseudoclase {
+          propiedad: valor;
+          }
+- :hover representa el estado en el cual el cursor está encima del elemento
+- :active Representa el estado de un elemento que no ha sido visitado
+- :visited Representa el estado de un elemento que ya ha sido visitado
+- :not() Representa el estado en el cual no coinciden los selectores que se indiquen
+- :nth-child() Representa el estado en el cual coinciden los hijos del elemento según el valor indicado
+      Valores de palabras clave
+      * old: los elementos hijos en posiciones impares
+      * even: los elementos hijos en posiciones pares
+  Fórmula matemática: An+B donde A y B son número enteros
+
+  Los pseudoelementos define el estilo de una parte específica de un elemento.
+  Sintaxis
+            selector : pseudo-elemento {
+            propiedad: valor;
+            }
+- ::before Sirve para agregar un contenido antes del elemento. El contenido es agregado mediante la propiedad content de CSS.
+- ::after Sirve para agregar un contenido después del elemento. El contenido es agregado mediante la propiedad content de CSS
+- ::first.letter Sirve para añadir estilos a la primera letra del texto de cualquier elemento.
+
+CASCADA Y ESPECIFICIDAD CSS
+La cascada es el concepto que determina qué estilos se colocan sobre otros, priorizando a aquellos que se encuentran más abajo del código. CSS es la abreviación de Cascade Style Sheets, que traducido es hojas de estilos e Cascada.
+C - Cascading: significa que el orden de las reglas en CSS importa
+S - Style
+S - Sheet
+
+La especificidad consiste en dar un vaalor a una regla CSS sobre qué tan específico es el estilo, esto para que los navegadores puedan saber qué estilos aplicar sobre otros, independientemente de dónde se encuentren en el código. El estilo se apliará donde la especificidad sea mayor. 
+Existen 6 tipos de especificidad con su respectivo valor, donde x es la cantidad de estilos que lo contienen.
+1. !important Es un valor de toda propiedad CSS que provee una especificidad de 10000, por lo que se aplicará ante otros estilos. Esto es una mala practica: h1 { color: red !important; }
+2. estilos en línea Son las propiedades CSS escritas en el HTML a través de la propiedad style de toda etiqueta. Mala práctica; h1 style="color: blue;">Especificidad</h1
+3. #id Son más especificos que las clases, atributos y pseudoclases. Estas últimas son más específicas que los elementos y pseudoelementos. El selector universal tiene una especificidad de 0.
+4. clases, atributos y pseudoclases
+5. elementos y pseudoelementos
+6. selector universal
+
+La propiedad display establece el tipo de visualización de los elementos HTML sin afectar el flujo normal de los elementos.
+Hay etiquetas que por defecto su display ya está determinado, como la etiqueta div que tiene display block, span tiene display inline y button tiene display inline-block 
+
+-Visualización en bloque (block): establece que un elemento ocupará todo el espacio disponible por defecto y el siguiente elemento a este se situará por debajo. Es posible añadir medidas de anchura width y altura height a estos elementos. Tambien es posible agregar todas las propiedades del modelo de caja.
+-Visualización en línea (inline): El display inline establece que un elemento ocupará el espacio del contenido del mismo y el siguiente elemento se situará a la derecha. No es posible añadir medidas de anchura width y altura height a estos elementos. También, no es posible agregar todas las propiedades del modelo de caja, únicamente funcionará la propiedad margin en el eje horizontal. 
+- Visualización de bloque y línea (inline-block): El display inline-block combina las ventajas de bloque de colocar medidades al elemento y propiedades del modelo de caja correctamente, con las ventajas de inline de color un elemento seguido de otro en el mismo espacio. Si el elemento excede el contenido total, se coloca en la siguiente línea por debajo.
+- Visualización nula (none): El display none desactiva la visualización de un elemento, como si el elemento no existiera.
+- 
+
+El display flex y grid son formas de visualización de elementos recientes y cada uno tienen sus propias características para crear interfaces de manera efectiva efectiva, a partir de un contenedor padre que dotará a los elementos hijos de superpoderes del posicionamiento. 
+Ambas son herramientas muy útiles en el desarrollo , especialmente para la creación de interfaces amigables al usuario y aptas para cualquier dispositivo, que este último se le conoce como responsive design. 
+
+FLEXBOX
+Consiste en el ordenamiento de elementos hijos en un solo eje, por defecto horizontalmente. El elemento padre. ocontenedor deberá contener la propiedad display con el valor flex. A partir de aqui, ya puedes ordenar los hijos según sea necesario.
